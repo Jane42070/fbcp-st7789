@@ -66,6 +66,8 @@ void InitST7735R()
     madctl ^= MADCTL_ROTATE_180_DEGREES;
 #endif
 
+    madctl ^= MADCTL_ROW_COLUMN_EXCHANGE;
+    madctl ^= MADCTL_COLUMN_ADDRESS_ORDER_SWAP;
     SPI_TRANSFER(0x36/*MADCTL: Memory Access Control*/, madctl);
     usleep(10*1000);
 
