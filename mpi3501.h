@@ -30,6 +30,7 @@
 // SPI drive settings are different compared to most other displays: KeDei SPI hat connects display to SPI channel 1 (channel 0 is for touch controller),
 // and Polarity and Phase are reversed. (Chip Select line is idle when high, and bits are clocked on rising edge of the serial clock line)
 #define DISPLAY_SPI_DRIVE_SETTINGS (1 | BCM2835_SPI0_CS_CPOL | BCM2835_SPI0_CS_CPHA)
+//#define DISPLAY_SPI_DRIVE_SETTINGS (0)
 
 // A peculiarity of KeDei is that it needs the Touch and Display CS lines pumped for each 32-bit word that is written, or otherwise it does not process bytes on the bus. (it does send
 // return bytes back on the MISO line though even without this, so it does at least do something even without this, but nothing would show up on the screen if this pumping is not done)

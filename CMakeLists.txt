@@ -263,6 +263,8 @@ else()
 	message(FATAL_ERROR "Please specify which display controller to use on command line to CMake!")
 endif()
 
-add_executable(fbcp-ili9341 ${sourceFiles})
+add_executable(fbcp-st7789 ${sourceFiles})
 
-target_link_libraries(fbcp-ili9341 pthread bcm_host atomic)
+# fbcp-ili9341
+
+target_link_libraries(fbcp-st7789 pthread bcm_host atomic)
